@@ -10,7 +10,7 @@
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Navbar</a>
+    <a class="navbar-brand" href="index.html">Project</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,25 +34,32 @@
     </div>
   </nav>
 
+    <!-- heart chart -->
     <div class=chartBox>
         <canvas id="heartChart"class="container-xl" ></canvas>
     </div>
 
     <div class="input-group">
         <input type="file" id = "uploadfile_heart" accept=".csv">
-        <button id='uploadConfirm_heart'>Upload</button>
+        <button id='uploadConfirm_heart'>Upload Heart</button>
     </div>
 
-   
+    <!-- thermistor chart -->
+    <div class=chartBox>
+      <canvas id="thermistorChart"class="container-xl" ></canvas>
+    </div>
 
     <div class="input-group">
         <input type="file" id = "uploadfile_thermistor" accept=".csv">
-        <button id='uploadConfirm_thermistor'>Upload</button>
+        <button id='uploadConfirm_thermistor'>Upload Thermistor</button>
     </div>
-   
+    <div class=chartBox>
+      <canvas id="flexChart"class="container-xl" ></canvas>
+    </div>
+
     <div class="input-group">
         <input type="file" id = "uploadfile_flex" accept=".csv">
-        <button id='uploadConfirm_flex'>Upload</button>
+        <button id='uploadConfirm_flex'>Upload Flex</button>
     </div>
   
     
