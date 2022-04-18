@@ -171,7 +171,18 @@ const uploadConfirm_flex = document.getElementById('uploadConfirm_flex').addEven
     });
 });
 
-//Tables
+function downloadPDF(){
+    var element = document.getElementById('charts');
+    var opt = {
+      margin:       1,
+      filename:     'user_graph.pdf',
+      image:        { type: 'jpeg', quality: 1 },
+      html2canvas:  { scale: 1 },
+      jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+    };
+    html2pdf().set(opt).from(element).save();
+    
+}
 
 
 
