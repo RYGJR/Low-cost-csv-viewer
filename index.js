@@ -174,16 +174,17 @@ const uploadConfirm_flex = document.getElementById('uploadConfirm_flex').addEven
 function downloadPDF(){
     var element = document.getElementById('charts');
     var opt = {
-      margin:       1,
+      margin:       0.5,
       filename:     'user_graph.pdf',
       image:        { type: 'jpeg', quality: 1 },
-      html2canvas:  { scale: 1 },
-      jsPDF:        { unit: 'in', format: 'letter', orientation: 'landscape' }
+      html2canvas:  { scale: 1, dpi: 400},
+      jsPDF:        { unit: 'in', format: 'legal', orientation: 'landscape' }
     };
     html2pdf().set(opt).from(element).save();
     
 }
 
-
-
+$("#toggle").on("click",function(){
+    $("[id='input-group']").hide(); 
+ });
 
