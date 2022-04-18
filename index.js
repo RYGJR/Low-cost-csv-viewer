@@ -172,6 +172,7 @@ const uploadConfirm_flex = document.getElementById('uploadConfirm_flex').addEven
 });
 
 function downloadPDF(){
+    $("[id='input-group']").hide(); 
     var element = document.getElementById('charts');
     var opt = {
       margin:       0.5,
@@ -184,7 +185,7 @@ function downloadPDF(){
     
 }
 
-$("#toggle").on("click",function(){
-    $("[id='input-group']").hide(); 
- });
 
+// $("#toggle").on("click",function(){
+//     $("[id='input-group']").hide(); 
+//  });
