@@ -35,14 +35,17 @@
   </nav>
   <div>
     <button onclick="downloadPDF()">Download PDF</button>
-    <button id="toggle">Hide</button>
+    
   </div>
   <div id="charts">
     <!-- heart chart -->
     <!-- <div class=chartBox>
         <canvas id="heartChart"class="container-xl" ></canvas>
     </div> -->
-    <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+    <div class="container-xl">
+          <div id="chartContainer1" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+    </div>
+    <div class="html2pdf__page-break"></div>
 
     <div id="input-group">
         <input type="file" id = "uploadfile_heart" accept=".csv">
@@ -50,19 +53,21 @@
     </div>
 
     <!-- thermistor chart -->
-    <div class=chartBox>
-      <canvas id="thermistorChart"class="container-xl" ></canvas>
+    <div class="container-xl">
+      <div id="chartContainer2" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
     </div>
+    <div class="html2pdf__page-break"></div>
 
     <div  id="input-group">
         <input type="file" id = "uploadfile_thermistor" accept=".csv">
         <button id='uploadConfirm_thermistor' class="buttons">Upload Thermistor</button>
     </div>
-    <div class="html2pdf__page-break"></div>
+    
     <!-- flex chart -->
-    <div class=chartBox>
-      <canvas id="flexChart"class="container-xl" ></canvas>
+    <div class="container-xl">
+      <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
     </div>
+  <div class="html2pdf__page-break"></div>
 
     <div  id="input-group">
         <input type="file" id = "uploadfile_flex" accept=".csv">
