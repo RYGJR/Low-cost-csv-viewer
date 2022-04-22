@@ -10,7 +10,6 @@ const uploadConfirm_heart = document
       complete: function (results_heart) {
         var data = [];
         var dataPoints = [];
-
         var dataSeries = { type: "line" };
         for (var i = results_heart.data.length - 1; i >= 0; i--) {
           //-unreversed the csv
@@ -18,34 +17,12 @@ const uploadConfirm_heart = document
             x: new Date(results_heart.data[i].Timestamp), // x: i+1;assuming one sec per data results_heart.data[i].Timestamp
             y: parseInt(results_heart.data[i].Value),
           });
-        }
-
-        //split object
-        var values = Object.values(dataPoints);
-        var final = [];
-        var counter = 0; // number per item in the object
-        var portion = {};
-
-        for (var key in dataPoints) {
-          if (counter !== 0 && counter % 3 === 0) {
-            final.push(portion);
-            portion = {};
+          if(results_heart.data[i].Value < 100){
+              console.log(new Date(results_heart.data[i].Timestamp),results_heart.data[i].Value)
           }
-          portion[key] = values[counter];
-          counter++;
+          
         }
-        final.push(portion);
-
-        //log each element group whatever idk what the term
-        // console.log(final.length)
-        for (var i = 0; i < final.length; i++) {
-          var first = final[Object.keys(final)[0]];
-          var second = final[Object.keys(final)[1]];
-          var third = final[Object.keys(final)[2]];
-        }
-        console.log(typeof first);
-        console.log(first);
-
+        
         //put there the function to draw chart
         dataSeries.dataPoints = dataPoints;
         data.push(dataSeries);
