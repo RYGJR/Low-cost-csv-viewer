@@ -1,3 +1,4 @@
+
 //heart graph
 
 const uploadConfirm_heart = document.getElementById('uploadConfirm_heart').addEventListener('click', () =>{
@@ -9,6 +10,7 @@ const uploadConfirm_heart = document.getElementById('uploadConfirm_heart').addEv
         complete: function(results_heart){
             var data = [];
             var dataPoints = [];
+            
             var dataSeries = { type: "line" };
             for(var i= results_heart.data.length -1; i >= 0;  i--){ //-unreversed the csv
                 dataPoints.push({
@@ -17,15 +19,40 @@ const uploadConfirm_heart = document.getElementById('uploadConfirm_heart').addEv
                 });
                 
             }
-            console.log(typeof dataPoints);
-            console.log(dataPoints);
             
+            //split object
+            var values = Object.values(dataPoints);
+            var final = [];
+            var counter = 0; // number per first item in the object
+            var portion = {};
+            
+            for (var key in dataPoints) {
+              if (counter !== 0 && counter % 3 === 0) { 
+                final.push(portion);
+                portion = {};
+              }
+              portion[key] = values[counter];
+              counter++
+            }
+            final.push(portion);       
+            
+            //log each element group whatever idk what the term
+            // console.log(final.length)
+            for(var i = 0; i < final.length; i++)
+                {
+                    var first = final[Object.keys(final)[0]];
+                    var second = final[Object.keys(final)[1]];
+                    var third = final[Object.keys(final)[2]];
+                }
+                console.log(first)
+                console.log(second)
+                // console.log(third)
+            
+
+           
+            //put there the function to draw chart
             dataSeries.dataPoints = dataPoints;
             data.push(dataSeries);
-
-            console.log(dataSeries);
-            //put there the function to draw chart
-            
             var options = {
                 zoomEnabled: true,
                 animationEnabled: true,
@@ -96,9 +123,7 @@ const uploadConfirm_thermistor = document.getElementById('uploadConfirm_thermist
     });
 });
 //Flex graph
-const timeData_flex = [];
-const value_flex = [];
-const valueName_flex = 'Flex Sensor';
+
 const uploadConfirm_flex = document.getElementById('uploadConfirm_flex').addEventListener('click', () =>{
     Papa.parse(document.getElementById('uploadfile_flex').files[0],
     {
