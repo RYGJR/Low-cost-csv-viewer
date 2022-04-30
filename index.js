@@ -13,15 +13,21 @@ const uploadConfirm_heart = document
         var dataSeries = { type: "line" };
         for (var i = results_heart.data.length - 1; i >= 0; i--) {
           //-unreversed the csv
+          if(results_heart.data[i].Channel !==1 ){
+          
           dataPoints.push({
-            x: new Date(results_heart.data[i].Timestamp), // x: i+1;assuming one sec per data results_heart.data[i].Timestamp
+            x: new Date(results_heart.data[i].Timestamp), 
             y: parseInt(results_heart.data[i].Value),
           });
-          if(results_heart.data[i].Value < 100){
-              console.log(new Date(results_heart.data[i].Timestamp),results_heart.data[i].Value)
-          }
+        }
+        
+          
+          // if(results_heart.data[i].Value < 100){
+          //     console.log(new Date(results_heart.data[i].Timestamp),results_heart.data[i].Value)
+          // }
           
         }
+        console.log(dataPoints)
         
         //put there the function to draw chart
         dataSeries.dataPoints = dataPoints;
