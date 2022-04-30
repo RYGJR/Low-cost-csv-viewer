@@ -22,12 +22,15 @@ const uploadConfirm_heart = document
         }
         
           
-          // if(results_heart.data[i].Value < 100){
-          //     console.log(new Date(results_heart.data[i].Timestamp),results_heart.data[i].Value)
-          // }
+          if(results_heart.data[i].Value < 90){
+              var myDiv = document.getElementById('insight');
+              myDiv.innerHTML += new Date(results_heart.data[i].Timestamp) + ": " +results_heart.data[i].Value + "<br />";
+
+              console.log(new Date(results_heart.data[i].Timestamp),results_heart.data[i].Value)
+          }
           
         }
-        console.log(dataPoints)
+        // console.log(dataPoints)
         
         //put there the function to draw chart
         dataSeries.dataPoints = dataPoints;
@@ -68,14 +71,15 @@ const uploadConfirm_thermistor = document
             x: new Date(results_thermistor.data[i].Timestamp), // x: i+1;assuming one sec per data results_heart.data[i].Timestamp
             y: parseInt(results_thermistor.data[i].Value),
           });
+          
         }
         console.log(typeof dataPoints);
-        console.log(dataPoints);
+        // console.log(dataPoints);
 
         dataSeries.dataPoints = dataPoints;
         data.push(dataSeries);
 
-        console.log(dataSeries);
+        // console.log(dataSeries);
         //put there the function to draw chart
 
         var options = {
