@@ -122,6 +122,13 @@ body {
   #right {
     flex: 1;
   }
+
+  #csvtable {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
 /* // */
 @charset "UTF-8";
 /*!
