@@ -148,7 +148,10 @@ const uploadConfirm_flex = document
 
 function downloadPDF() {
   $("[id='input-group']").hide();
+  $("[id='right']").hide();
+  $("[id='insight']").hide();
   var element = document.getElementById("charts");
+
   var opt = {
     margin: 0.5,
     filename: "user_graph.pdf",

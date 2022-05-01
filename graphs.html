@@ -63,26 +63,45 @@
     </div>
 
     <!-- thermistor chart -->
-    <div class="container-xl">
-      <div id="chartContainer2" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+    <div id="wrapper">
+      <div id = 'left'>
+        <div class="container-xl">
+          <div id="chartContainer2" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+        </div>
+      </div>
     </div>
+   
+    
     <div class="html2pdf__page-break"></div>
-
-    <div  id="input-group">
-        <input type="file" id = "uploadfile_thermistor" accept=".csv">
-        <button id='uploadConfirm_thermistor' class="buttons">Upload Thermistor</button>
+    <div id="wrapper">
+      <div id="left">
+        <div  id="input-group">
+          <input type="file" id = "uploadfile_thermistor" accept=".csv">
+          <button id='uploadConfirm_thermistor' class="buttons">Upload Thermistor</button>
+      </div>
+      </div>
     </div>
     
+   
     <!-- flex chart -->
-    <div class="container-xl">
-      <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+    <div id="wrapper">
+      <div id="left">
+        <div class="container-xl">
+          <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;"></div>
+        </div>
+      </div>
+      
     </div>
-  <div class="html2pdf__page-break"></div>
+    
 
-    <div  id="input-group">
-        <input type="file" id = "uploadfile_flex" accept=".csv">
-        <button id='uploadConfirm_flex' class="buttons">Upload Flex</button>
-    </div>
+  <div class="html2pdf__page-break"></div>
+   
+  <div id="left">
+      <div  id="input-group">
+      <input type="file" id = "uploadfile_flex" accept=".csv">
+      <button id='uploadConfirm_flex' class="buttons">Upload Flex</button>
+  </div></div>
+    
   
   </div>
     <script src="index.js"></script>
