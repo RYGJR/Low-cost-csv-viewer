@@ -20,11 +20,11 @@ const uploadConfirm_heart = document
             y: parseInt(results_heart.data[i].Value),
           });
         }
-        
+     
           
           if(results_heart.data[i].Value < 90){
               var myDiv = document.getElementById('insight');
-              myDiv.innerHTML += new Date(results_heart.data[i].Timestamp) + ": " +results_heart.data[i].Value + "<br />";
+              myDiv.innerHTML += new Date(results_heart.data[i].Timestamp).toLocaleTimeString('en',{ timeStyle: 'short', hour12: true, timeZone: 'UTC' } ) + ": " + "<strong>"+results_heart.data[i].Value + "</strong>"+"<br />";
 
               console.log(new Date(results_heart.data[i].Timestamp),results_heart.data[i].Value)
           }
